@@ -13,6 +13,11 @@ const db = new Pool({
 	port: 5432
 });
 
+
+app.get("/",  (req, res) => {
+    res.send("ecommerce server.  Ask for /customers, /suppliers, /products etc.");
+  });
+
 //endpoint /customers to return all the customers from the database
 
 app.get("/customers",(req, res)=>{
@@ -42,6 +47,9 @@ app.get("/suppliers",(req, res)=>{
       });
       
     })
+
+  
+
 
 
 
