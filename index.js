@@ -13,8 +13,10 @@ const db = new Pool({
 	port: 5432
 });
 
+//endpoint /customers to return all the customers from the database
+
 app.get("/customers",(req, res)=>{
-db.query("SELECT id, name, address, city, country FROM customers",
+db.query("SELECT * FROM customers order by name",
     (error, result) => {
       console.log(result)
       res.json(result.rows);
